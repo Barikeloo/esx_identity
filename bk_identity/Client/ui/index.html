@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@18657a9/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./main.css">
+    <script src="./app.js"></script>
+    <title>esx_identity modification by Barikelo#3220</title>
+</head>
+<body>
+    <audio src="./audio/audio.mp3" class="audio"></audio>
+    <div class="container">
+        <div class="card">
+            <div class="card-info">
+                <input type="text" class="input" placeholder="NOMBRE" id="nombre">
+                <input type="text" class="input" placeholder="APELLIDOS" id="apellidos">
+                <input type="text" class="input" placeholder="ALTURA" id="altura">
+                <input type="text" class="input" placeholder="NACIONALIDAD" id="nacionalidad">
+                <input type="date" class="input" id="fecha">
+                <div class="radio-toolbar">
+                    <input type="radio" id="radiom" name="sex" value="m" checked>
+                    <label for="radiom">Male</label>
+                
+                    <input type="radio" id="radiof" name="sex" value="f">
+                    <label for="radiof">Female</label>
+                </div>
+                <div class="btn-go">CONTINUAR</div>
+            </div>
+        </div>
+        <img src="./images/michael.png" class="img">
+        <i class="fa-solid fa-volume-off icon" id="unmuted"></i>
+        <i class="fa-solid fa-volume-xmark icon" id="muted"></i>
+    </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&family=Roboto:wght@100&display=swap');
+
+body {
+  background-image: url(./images/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  user-select: none;
+
+}
+
+.card {
+  width: 22vw;
+  height: 454px;
+  background: #ffffff;
+  position: absolute;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 3vw #9c9b9b;
+}
+
+.card h2 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 210px;
+  background-image: linear-gradient(180deg, rgb(0, 153, 255), rgb(0, 153, 255));
+  height: 130%;
+  animation: rotBGimg 9s linear infinite;
+  transition: all 0.2s linear;
+  filter: drop-shadow(0 0 1vw rgb(255, 255, 255));
+  box-shadow: 0 0 .3vw rgb(0, 153, 255);
+  filter: drop-shadow(0 0 3vw rgb(0, 153, 255));
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  background: #ffffff;
+  ;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.img {
+  position: absolute;
+  right: 2%;
+  filter: drop-shadow(0 0 3vw rgb(0, 0, 0));
+}
+
+
+.card-info {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.input {
+  width: 19vw;
+  line-height: 28px;
+  border: 2px solid transparent;
+  border-bottom-color: #00bbff;
+  padding: .2rem 0;
+  outline: none;
+  background-color: transparent;
+  color: #0d0c22;
+  transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.input::placeholder {
+  color: rgba(116, 116, 116, 0.589);
+  transition: .3s;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.input:focus,
+input:hover::placeholder {
+  color: #00bbff;
+  transition: .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3C3C3C;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #00bbff;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(85px);
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after {
+  content: 'HOMBRE';
+  color: white;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+
+}
+
+input:checked+.slider:after {
+  content: 'MUJER';
+
+}
+
+.btn-go {
+  height: 2vw;
+  width: 14vw;
+  background-color: #00bbff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: .3vw;
+  transition: .3s;
+  font-size: 1vw;
+}
+
+.btn-go:hover {
+  cursor: pointer;
+  width: 10vw;
+  transition: .3s;
+  filter: drop-shadow(0 0 .2vw #00bbff);
+  box-shadow: 0 0 .5vw #00bbff;
+}
+
+.icon {
+  font-size: 2.5vw;
+  position: absolute;
+  bottom: 0;
+  margin: 2vw;
+  color: #2196F3;
+  transition: .2s;
+}
+
+.icon:hover {
+  color: #00bbff;
+  filter: drop-shadow(0 0 1vw);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  width: 36%;
+}
+
+.radio-toolbar label {
+  text-align: center;
+  display: inline-block;
+  padding: 5px 10px;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #a2a2a2c0;
+  font-size: 16px;
+  color: #ffffff;
+  border-radius: 4px;
+  width: 100px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+  width: 100px;
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(0, 24, 40, 0) 0%, rgba(0, 24, 40, 0.0) 80%);
+  background-color: #2eaabd;
+}
